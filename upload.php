@@ -6,16 +6,18 @@
  * 4.顯示檔案列表
  */
 
-// if (!empty($_FILES && $_FILES['img']['error']==0)){
+// if (!empty($_FILES) && $_FILES['img']['error']==0){
 if(!empty($_POST)){
     echo "有POST的資料<br>";
     echo $_FILES['img']['error'];
     echo "<br>";
-    echo $_FILES['img']['tmp_name'];
+    echo $_FILES['img']['name'];
     echo "<br>";
     echo $_FILES['img']['type'];
     echo "<br>";
     echo $_FILES['img']['size'];
+    echo "<br>";
+    echo $_FILES['img']['tmp_name'];
 
     move_uploaded_file($_FILES['img']['tmp_name'],"./img/".$_FILES['img']['name']);
 }
